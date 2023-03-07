@@ -1,0 +1,294 @@
+/*
+    Theme Name: Sorimachi Magazine
+    Theme URI: http://info.sorimachi.co.jp
+    Author: Quang Vinh
+    Author URI: http://info.sorimachi.co.jp/quang-vinh
+    Version: 1.0
+    Description: Sorimachi Magazine
+    Tags: theme, text, news, magazine, ...
+    TextDomain: magazine
+*/
+
+/* mouse over link */
+.site-title-2 a:hover {
+  text-decoration: underline;
+}
+
+.outline .block-style{
+  display: flex;
+  justify-content: center;
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .site-main .content .sidebar {
+    max-width: 190px;
+    position: absolute;
+    bottom: 0;
+    right: 50px;
+  }
+
+  .site-main .content .main {
+    max-width: 390px;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .site-main .content .sidebar {
+    max-width: 300px;
+    /*position: fixed;*/
+    /*right: 50px;*/
+    /*bottom: 30px;*/
+    position: absolute;
+    bottom: 0;
+    right: 50px;
+  }
+
+  .site-main .content .main {
+    /*width: calc(100% - 500px);*/
+    max-width: 650px;
+    /*text-align: center;*/
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .site-main .content .sidebar {
+    max-width: 400px;
+    /*position: fixed;*/
+    /*right: 50px;*/
+    /*bottom: 30px;*/
+    position: absolute;
+    bottom: 0;
+    right: 50px;
+  }
+  .site-main .content .main {
+    /*width: calc(100% - 500px);*/
+    max-width: 800px;
+    /*text-align: center;*/
+  }
+}
+
+* {
+  font: 0.99em 'Times New Roman', Times, serif;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+li {
+  list-style: none;
+}
+
+[class*="mobile"] {
+  display: none;
+}
+
+.site-header {
+  position: relative;
+  z-index: 30;
+  overflow: hidden;
+  width: 100%;
+  background-color: #427fdf;
+}
+
+.site-header .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: calc(100% - 8rem);
+  margin: 0 auto;
+  height: 50px;
+  /*text-align: center;*/
+  /*justify-content: center;*/
+
+}
+
+.site-header .header .logo {
+
+
+  width: 310px;
+  /*height: 100%;*/
+  font-size: 1.5em;
+
+
+}
+
+.site-header .header .primary-menu {
+  width: calc(100% - 310px - 210px);
+  height: 100%;
+}
+
+.site-header .header .primary-menu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  list-style: none;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.site-header .header .primary-menu ul li a {
+  padding: 10px;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.87);
+  font-weight: 500;
+}
+
+.site-main {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 30;
+  margin: 0;
+  padding: 20px 0;
+}
+
+.site-main .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-align: unset;
+      -ms-flex-align: unset;
+          align-items: unset;
+  width: 90%;
+  margin: 0 auto;
+}
+
+
+
+.site-main .content .main h1.entry-title a {
+  font-size: 3em;
+  font-weight: 700;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.site-main .content .main h3.entry-title a {
+  font-size: 2em;
+  font-weight: 700;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+
+
+.site-main .content .sidebar .widget {
+  width: 100%;
+  padding: 10px 20px;
+  border: 1px solid;
+  margin-bottom: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.site-main .content .sidebar .widget_search input {
+  padding: 5px 0;
+  text-indent: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  line-height: 20px;
+  width: 100%;
+}
+
+.site-main .content .sidebar .widget_search button {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: none;
+  line-height: 32px;
+  padding: 0 15px;
+  margin-left: calc(100% - 62px);
+}
+
+.site-footer {
+  background: #1a1a1c;
+  border-top: 1px solid #262628;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 2rem 0;
+  position: relative;
+  text-align: center;
+  z-index: 30;
+}
+
+ol {
+  padding: 0;
+}
+
+[class*="site-title"] a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.widget_recent_post_magazine a {
+  text-decoration: none;
+  color: rgba(37, 37, 37, 0.781);
+}
+
+.search-submit {
+  cursor: pointer;
+  transition: 0.2s ease-in;
+}
+
+.search-submit:hover {
+  outline: 1px solid;
+  opacity: 0.8;
+}
+
+@media (max-width: 720px) {
+  [class*="mobile"] {
+    display: block;
+  }
+}
+
+/*add table*/
+#bodyTable{
+  background-color: white !important;
+
+}
+
+.site-main .content .main #blockContainer{
+  min-width: 100% !important;
+}
+

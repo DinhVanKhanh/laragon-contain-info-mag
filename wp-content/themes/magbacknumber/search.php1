@@ -1,0 +1,45 @@
+<?php get_header(); ?>
+
+<div class="main front">
+    <div class="search-info">
+        <?php
+            $search_query = new WP_Query( "s=$s&posts_per_page=-1" );
+            $search_count = $search_query->post_count;
+            unset( $search_query );
+
+            $page = !empty( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 0;
+            $query = "s=$s&showpost=5&paged=$page";
+            if ( !empty( $_SESSION["mag_user"] ) ) {
+                $query .= "&category_name=" . $_SESSION["mag_category"]["category_name"];
+            }
+            $search_query = new WP_Query( $query );
+            $search_keyword = wp_specialchars( $s );
+            printf( __( '検索 『%2$s』', __TEXT_DOMAIN__ ), $search_count, $search_keyword );
+        ?>
+    </div>
+    <?php
+        if ( $search_query->have_posts() ) :
+            while ( $search_query->have_posts() ) : $search_query->the_post(); ?>
+                <section id="search-post-<?php the_ID(); ?>" class="search-post">
+                    <?php get_template_part( "template-part/content", get_post_format() ); ?>
+                </section><?php
+            endwhile;
+
+            if ( get_query_var( 'paged' ) < $search_query->max_num_pages && 1 < $search_query->max_num_pages) {
+                    posts_nav_link( " | ", __( '以前の記事を見る', __TEXT_DOMAIN__ ), __( '次の記事を見る', __TEXT_DOMAIN__ ) );
+                }
+            if ( get_query_var( 'paged' ) >= $search_query->max_num_pages) {
+                    previous_posts_link( __( '以前の記事を見る', __TEXT_DOMAIN__ ) );
+                }
+            wp_reset_postdata();
+        else:
+            get_template_part( "template-part/content", "none" );
+        endif;
+    ?>
+</div>
+
+<div class="sidebar">
+    <?php get_sidebar(); ?>
+</div>
+
+<?php get_footer(); ?>
